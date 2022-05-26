@@ -23,3 +23,12 @@ sudo ./vboxadd setup
 
 vagrant plugin uninstall vagrant-vbguest
 vagrant plugin install vagrant-vbguest
+
+!!! vagrant plugin uninstall vagrant-winnfsd
+
+sh: netsh: command not found
+sh: cscript: command not found
+It seems that you don't have the privileges to change 
+the firewall rules. NFS will not work without that 
+firewall changes.
+
