@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
             parted /dev/md0 mkpart "md03" ext4 40% 60%
             parted /dev/md0 mkpart "md04" ext4 60% 80%
             parted /dev/md0 mkpart "md05" ext4 80% 100%
-            for i in $(seq 1 4); do sudo mkfs.ext4 /dev/md0p$i; done
+            for i in $(seq 1 5); do sudo mkfs.ext4 /dev/md0p$i; done
             mkdir -p /raid1/md0p{1,2,3,4,5}
             for i in $(seq 1 5); do sudo mount /dev/md0p$i /raid1/md0p$i; done
   	  SHELL
