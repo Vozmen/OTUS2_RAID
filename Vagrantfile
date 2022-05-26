@@ -22,7 +22,12 @@ MACHINES = {
                :sata4 => {
             :dfile => './sata4.vdi',
             :size => 250, # Megabytes
-            :port => 4}
+            :port => 4},
+
+               :sata5 => {
+            :dfile => './sata5.vdi',
+            :size => 250, # Megabytes
+            :port => 5}
         }
     },
 }
@@ -63,7 +68,7 @@ Vagrant.configure("2") do |config|
             cp ~vagrant/.ssh/auth* ~root/.ssh
             mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
             yum install -y mdadm smartmontools hdparm gdisk
-            mdadm --create --verbose --force /dev/md0 -l 4 -n 4 /dev/sd{b,c,d,e}
+            mdadm --create --verbose --force /dev/md0 -l 5 -n 5 /dev/sd{b,c,d,e,f}
             sudo parted -s /dev/md0 mklabel gpt
             parted /dev/md0 mkpart "md01" ext4 0% 20%
             parted /dev/md0 mkpart "md02" ext4 20% 40%

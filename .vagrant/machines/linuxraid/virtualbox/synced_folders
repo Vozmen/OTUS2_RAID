@@ -1,1 +1,0 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/vozmen/OTUS2_RAID","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
